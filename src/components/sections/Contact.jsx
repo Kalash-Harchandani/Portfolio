@@ -1,5 +1,5 @@
 import React from 'react';
-import { Mail, Linkedin, Github, ExternalLink } from 'lucide-react';
+import { Mail, ExternalLink } from 'lucide-react';
 import { FaLinkedin, FaGithub } from 'react-icons/fa';
 import { portfolioData } from '../../data/portfolioData';
 import { FadeInSection } from '../FadeInSection';
