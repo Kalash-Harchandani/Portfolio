@@ -15,7 +15,7 @@ export const portfolioData = {
     email: "kalash.devworks@gmail.com",
     linkedin: "https://linkedin.com/in/kalash-kt20",
     github: "https://github.com/kalash-harchandani",
-    codolio: "https://codolio.com/profile/Kalash Harchandani",
+    codolio: "https://codolio.com/profile/Kalash_Harchandani",
     phone: "+91-7976725317"
   },
   skills: [
