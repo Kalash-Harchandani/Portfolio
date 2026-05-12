@@ -195,17 +195,6 @@ const Hero = () => {
                   <span className="text-xs font-black text-slate-800 dark:text-white uppercase tracking-widest">Active</span>
                 </div>
               </motion.div>
-              
-              <motion.div 
-                animate={{ y: [8, -8, 8] }}
-                transition={{ duration: 6, repeat: Infinity }}
-                className="absolute -left-16 bottom-1/3 glass-card px-5 py-3 rounded-2xl z-30 shadow-2xl hidden md:block border border-white/20 dark:border-white/5"
-              >
-                <div className="flex items-center gap-3">
-                  <Cpu size={18} className="text-primary-500" />
-                  <span className="text-xs font-black text-slate-800 dark:text-white uppercase tracking-widest">AI Engine</span>
-                </div>
-              </motion.div>
             </div>
           </motion.div>
 

@@ -42,7 +42,7 @@ const About = () => {
                     </div>
                     <div>
                       <p className="text-xs font-bold text-slate-500 dark:text-slate-400 uppercase tracking-widest">Experience</p>
-                      <p className="text-sm font-bold text-slate-900 dark:text-white">Active Industry Integration</p>
+                      <p className="text-sm font-bold text-slate-900 dark:text-white">Shipping Real Systems</p>
                     </div>
                   </div>
                 </div>
@@ -96,8 +96,8 @@ const About = () => {
                </div>
                <div className="w-px h-8 bg-slate-200 dark:bg-slate-800"></div>
                <div className="text-center">
-                  <p className="text-2xl font-black text-slate-900 dark:text-white">5%</p>
-                  <p className="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Top SDE Talent</p>
+                  <p className="text-2xl font-black text-slate-900 dark:text-white">2+</p>
+                  <p className="text-[10px] font-bold text-slate-400 uppercase tracking-widest">AI Systems Shipped</p>
                </div>
                <div className="w-px h-8 bg-slate-200 dark:bg-slate-800"></div>
                <div className="text-center">
