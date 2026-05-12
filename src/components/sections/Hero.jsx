@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { ArrowRight, Download, Terminal, Database, Cpu } from 'lucide-react';
 import Typewriter from 'typewriter-effect';
@@ -6,6 +6,18 @@ import { portfolioData } from '../../data/portfolioData';
 
 const Hero = () => {
   const { name, tagline, resumeUrl } = portfolioData.hero;
+  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+
+  useEffect(() => {
+    const handleMouseMove = (e) => {
+      setMousePosition({
+        x: (e.clientX / window.innerWidth - 0.5) * 20,
+        y: (e.clientY / window.innerHeight - 0.5) * 20,
+      });
+    };
+    window.addEventListener('mousemove', handleMouseMove);
+    return () => window.removeEventListener('mousemove', handleMouseMove);
+  }, []);
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -43,13 +55,13 @@ const Hero = () => {
       <div className="absolute inset-0 z-0">
         <div className="absolute inset-0 bg-grid-slate-100/[0.03] dark:bg-grid-white/[0.02] bg-[size:40px_40px]"></div>
         <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-primary-500/50 to-transparent"></div>
-        {/* Animated Tech Orbs */}
+        {/* Animated Tech Orbs with Mouse Parallax */}
         <motion.div 
           animate={{ 
             scale: [1, 1.2, 1],
             opacity: [0.3, 0.5, 0.3],
-            x: [0, 50, 0],
-            y: [0, -30, 0]
+            x: [0, 50, 0] + mousePosition.x * -2,
+            y: [0, -30, 0] + mousePosition.y * -2
           }}
           transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
           className="absolute top-1/4 left-1/4 w-[400px] h-[400px] bg-primary-500/10 dark:bg-primary-900/20 rounded-full blur-[100px]" 
@@ -58,8 +70,8 @@ const Hero = () => {
           animate={{ 
             scale: [1.2, 1, 1.2],
             opacity: [0.2, 0.4, 0.2],
-            x: [0, -40, 0],
-            y: [0, 60, 0]
+            x: [0, -40, 0] + mousePosition.x * 2,
+            y: [0, 60, 0] + mousePosition.y * 2
           }}
           transition={{ duration: 12, repeat: Infinity, ease: "easeInOut" }}
           className="absolute bottom-1/4 right-1/4 w-[500px] h-[500px] bg-indigo-500/10 dark:bg-indigo-900/20 rounded-full blur-[120px]" 
@@ -156,30 +168,33 @@ const Hero = () => {
             initial="hidden"
             animate="visible"
             className="relative lg:flex-shrink-0"
+            style={{
+              x: mousePosition.x * 1.5,
+              y: mousePosition.y * 1.5,
+            }}
           >
-            <div className="relative w-full aspect-[3/4] max-w-[450px] mx-auto">
+            <div className="relative w-full aspect-[3/4] max-w-[450px] mx-auto group perspective-1000">
               {/* Animated Decorative Frames */}
-              <div className="absolute -inset-6 border border-primary-500/10 dark:border-primary-400/5 rounded-[3rem] animate-pulse"></div>
+              <div className="absolute -inset-6 border border-primary-500/20 dark:border-primary-400/10 rounded-[3rem] animate-pulse"></div>
               
-              {/* Corner Accents */}
-              <div className="absolute top-0 right-0 w-20 h-20 border-t-4 border-r-4 border-primary-500 dark:border-primary-500 rounded-tr-3xl z-20"></div>
-              <div className="absolute bottom-0 left-0 w-20 h-20 border-b-4 border-l-4 border-primary-500 dark:border-primary-500 rounded-bl-3xl z-20"></div>
+              {/* Continuous Spinning Glow Background */}
+              <div className="absolute -inset-2 bg-gradient-to-r from-primary-600 via-purple-500 to-indigo-600 rounded-[2.2rem] opacity-80 group-hover:opacity-100 blur-xl transition-opacity duration-500 animate-spin-slow"></div>
 
               {/* Main Photo Container */}
-              <div className="relative w-full h-full rounded-[2rem] overflow-hidden shadow-[0_0_50px_rgba(0,0,0,0.5)] z-10 border-2 border-white/50 dark:border-white/10">
+              <div className="relative w-full h-full rounded-[2rem] overflow-hidden shadow-[0_0_50px_rgba(0,0,0,0.5)] z-10 border-2 border-white/50 dark:border-white/10 group-hover:border-primary-500/50 transition-colors duration-500">
                 <img 
                   src="/profile.jpg" 
                   alt={name} 
-                  className="w-full h-full object-cover object-center transform scale-100 hover:scale-105 transition-transform duration-1000 ease-out"
+                  className="w-full h-full object-cover object-center transform scale-100 group-hover:scale-110 transition-transform duration-1000 ease-out"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent z-10 transition-opacity duration-700 hover:opacity-0"></div>
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent z-10 opacity-60 group-hover:opacity-30 transition-opacity duration-700"></div>
                 
                 {/* Techy Scanline Effect */}
                 <div className="absolute inset-0 pointer-events-none z-20 overflow-hidden">
                   <motion.div 
                     animate={{ y: ['-100%', '200%'] }} 
-                    transition={{ duration: 5, repeat: Infinity, ease: "linear" }}
-                    className="w-full h-32 bg-gradient-to-b from-transparent via-primary-500/10 to-transparent" 
+                    transition={{ duration: 3, repeat: Infinity, ease: "linear" }}
+                    className="w-full h-32 bg-gradient-to-b from-transparent via-primary-500/20 to-transparent" 
                   />
                 </div>
               </div>

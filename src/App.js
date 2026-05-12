@@ -6,6 +6,7 @@ import Skills from './components/sections/Skills';
 import Projects from './components/sections/Projects';
 import Experience from './components/sections/Experience';
 import Contact from './components/sections/Contact';
+import CustomCursor from './components/CustomCursor';
 import { useTheme } from './hooks/useTheme';
 
 function App() {
@@ -13,6 +14,7 @@ function App() {
 
   return (
     <div className="min-h-screen">
+      <CustomCursor />
       <Navbar theme={theme} toggleTheme={toggleTheme} />
       <main>
         <Hero />

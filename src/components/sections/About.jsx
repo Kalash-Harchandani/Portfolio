@@ -52,13 +52,19 @@ const About = () => {
           
           {/* Content Column - Takes 7/12 columns */}
           <FadeInSection delay={0.4} direction="left" className="lg:col-span-7 flex flex-col space-y-8">
-            <div className="glass-card p-10 md:p-14 rounded-[2.5rem] relative overflow-hidden group border border-white dark:border-white/5 shadow-xl">
-              <div className="absolute -top-10 -right-10 w-40 h-40 bg-primary-500/10 rounded-full blur-3xl group-hover:bg-primary-500/20 transition-colors duration-700"></div>
+            <div className="glass-card p-10 md:p-14 rounded-[2.5rem] relative overflow-hidden group border border-white dark:border-white/5 shadow-xl hover:border-primary-500/30 transition-colors duration-500">
+              <div className="absolute -top-10 -right-10 w-40 h-40 bg-primary-500/10 rounded-full blur-3xl group-hover:bg-primary-500/30 transition-colors duration-700"></div>
               
+              {/* Animated subtle border overlay */}
+              <div className="absolute inset-0 rounded-[2.5rem] ring-1 ring-inset ring-primary-500/0 group-hover:ring-primary-500/30 transition-all duration-700"></div>
+
               <div className="relative z-10">
                 <div className="flex items-center gap-3 mb-8 text-primary-600 dark:text-primary-400">
-                  <User size={28} className="font-bold" />
-                  <span className="text-sm font-black uppercase tracking-[0.3em]">Developer Profile</span>
+                  <div className="relative">
+                    <div className="absolute inset-0 bg-primary-500 blur-lg opacity-0 group-hover:opacity-50 transition-opacity duration-500"></div>
+                    <User size={28} className="font-bold relative z-10" />
+                  </div>
+                  <span className="text-sm font-black uppercase tracking-[0.3em] group-hover:text-primary-500 transition-colors">Developer Profile</span>
                 </div>
                 
                 <p className="text-xl md:text-2xl text-slate-700 dark:text-slate-300 leading-relaxed font-light mb-12 italic">
@@ -89,19 +95,20 @@ const About = () => {
               </div>
             </div>
             
-            <div className="flex items-center justify-between p-6 px-10 glass-card rounded-3xl border border-white dark:border-white/5 shadow-lg">
-               <div className="text-center">
-                  <p className="text-2xl font-black text-slate-900 dark:text-white">8.52</p>
+            <div className="flex items-center justify-between p-6 px-10 glass-card rounded-3xl border border-white dark:border-white/5 shadow-lg group hover:border-primary-500/30 transition-colors duration-500 relative overflow-hidden">
+               <div className="absolute inset-0 bg-gradient-to-r from-primary-500/0 via-primary-500/10 to-primary-500/0 opacity-0 group-hover:opacity-100 transition-opacity duration-1000 -translate-x-full group-hover:translate-x-full"></div>
+               <div className="text-center relative z-10">
+                  <p className="text-2xl font-black text-slate-900 dark:text-white group-hover:text-primary-500 transition-colors">8.52</p>
                   <p className="text-[10px] font-bold text-slate-400 uppercase tracking-widest">CGPA</p>
                </div>
-               <div className="w-px h-8 bg-slate-200 dark:bg-slate-800"></div>
-               <div className="text-center">
-                  <p className="text-2xl font-black text-slate-900 dark:text-white">2+</p>
+               <div className="w-px h-8 bg-slate-200 dark:bg-slate-800 relative z-10"></div>
+               <div className="text-center relative z-10">
+                  <p className="text-2xl font-black text-slate-900 dark:text-white group-hover:text-primary-500 transition-colors">2+</p>
                   <p className="text-[10px] font-bold text-slate-400 uppercase tracking-widest">AI Systems Shipped</p>
                </div>
-               <div className="w-px h-8 bg-slate-200 dark:bg-slate-800"></div>
-               <div className="text-center">
-                  <p className="text-2xl font-black text-slate-900 dark:text-white">AI-1st</p>
+               <div className="w-px h-8 bg-slate-200 dark:bg-slate-800 relative z-10"></div>
+               <div className="text-center relative z-10">
+                  <p className="text-2xl font-black text-slate-900 dark:text-white group-hover:text-primary-500 transition-colors">AI-1st</p>
                   <p className="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Core Philosophy</p>
                </div>
             </div>

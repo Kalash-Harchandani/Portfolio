@@ -28,25 +28,31 @@ const Skills = () => {
               <FadeInSection key={index} delay={index * 0.1}>
                 <motion.div 
                   whileHover={{ y: -8, scale: 1.02 }}
-                  className="glass-card p-10 rounded-[2.5rem] transition-all duration-500 shadow-2xl border border-white dark:border-white/5 group relative overflow-hidden h-full flex flex-col"
+                  className="glass-card p-10 rounded-[2.5rem] transition-all duration-500 shadow-2xl border border-white dark:border-white/5 hover:border-primary-500/30 group relative overflow-hidden h-full flex flex-col"
                 >
                    {/* Techy background pulse on group hover */}
-                  <div className="absolute -bottom-10 -right-10 w-40 h-40 bg-primary-500/5 rounded-full blur-3xl group-hover:bg-primary-500/20 transition-all duration-700"></div>
+                  <div className="absolute -bottom-10 -right-10 w-40 h-40 bg-primary-500/5 rounded-full blur-3xl group-hover:bg-primary-500/30 transition-all duration-700"></div>
                   
-                  <div className="flex items-center gap-5 mb-10">
-                    <div className="p-4 bg-slate-50 dark:bg-white/5 text-primary-600 dark:text-primary-400 rounded-2xl shadow-inner group-hover:bg-primary-600 group-hover:text-white transition-all duration-500">
-                      <Icon size={28} />
+                  {/* Glowing border effect on hover */}
+                  <div className="absolute inset-0 rounded-[2.5rem] ring-1 ring-inset ring-primary-500/0 group-hover:ring-primary-500/50 transition-all duration-500"></div>
+                  
+                  <div className="flex items-center gap-5 mb-10 relative z-10">
+                    <div className="relative">
+                      <div className="absolute inset-0 bg-primary-500 blur-lg opacity-0 group-hover:opacity-60 transition-opacity duration-500"></div>
+                      <div className="relative p-4 bg-slate-50 dark:bg-white/5 text-primary-600 dark:text-primary-400 rounded-2xl shadow-inner group-hover:bg-primary-600 group-hover:text-white transition-all duration-500 border border-slate-200 dark:border-white/10 group-hover:border-primary-400">
+                        <Icon size={28} />
+                      </div>
                     </div>
                     <h3 className="text-2xl font-black text-slate-900 dark:text-white tracking-tight uppercase">
                       {skillGroup.category}
                     </h3>
                   </div>
                   
-                  <div className="flex flex-wrap gap-3 mt-auto">
+                  <div className="flex flex-wrap gap-3 mt-auto relative z-10">
                     {skillGroup.items.map((item, i) => (
                       <span 
                         key={i}
-                        className="flex items-center px-4 py-2.5 text-sm font-bold bg-white dark:bg-white/5 text-slate-700 dark:text-slate-300 rounded-xl border border-slate-200 dark:border-white/5 shadow-sm group-hover:border-primary-500/50 transition-all duration-300"
+                        className="flex items-center px-4 py-2.5 text-sm font-bold bg-white dark:bg-white/5 text-slate-700 dark:text-slate-300 rounded-xl border border-slate-200 dark:border-white/5 shadow-sm group-hover:border-primary-500/30 hover:!border-primary-500 hover:bg-primary-500/10 transition-all duration-300"
                       >
                         <TechIcon tech={item} className="mr-2" />
                         {item}

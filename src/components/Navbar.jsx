@@ -59,7 +59,7 @@ const Navbar = ({ theme, toggleTheme }) => {
                     onClick={() => setActiveHash(link.href)}
                     className={`relative px-4 py-2 flex items-center gap-2 rounded-full text-sm font-bold tracking-tight transition-all duration-300 group ${
                       isActive 
-                        ? 'text-primary-600 dark:text-primary-400 bg-primary-500/10' 
+                        ? 'text-primary-600 dark:text-primary-400' 
                         : 'text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white'
                     }`}
                   >
@@ -68,8 +68,8 @@ const Navbar = ({ theme, toggleTheme }) => {
                     
                     {isActive && (
                       <motion.div
-                        layoutId="activePill"
-                        className="absolute inset-0 bg-primary-500/10 dark:bg-primary-400/10 rounded-full -z-10"
+                        layoutId="activeUnderline"
+                        className="absolute bottom-0 left-0 right-0 h-0.5 bg-primary-500 rounded-full"
                         transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
                       />
                     )}
@@ -107,9 +107,10 @@ const Navbar = ({ theme, toggleTheme }) => {
       <AnimatePresence>
         {isOpen && (
           <motion.div
-            initial={{ opacity: 0, scale: 0.95, y: -20 }}
-            animate={{ opacity: 1, scale: 1, y: 0 }}
-            exit={{ opacity: 0, scale: 0.95, y: -20 }}
+            initial={{ opacity: 0, scale: 0.95, y: -20, filter: 'blur(10px)' }}
+            animate={{ opacity: 1, scale: 1, y: 0, filter: 'blur(0px)' }}
+            exit={{ opacity: 0, scale: 0.95, y: -20, filter: 'blur(10px)' }}
+            transition={{ duration: 0.3, ease: 'easeOut' }}
             className={`absolute top-full left-0 right-0 mt-2 mx-4 overflow-hidden rounded-3xl bg-white/95 dark:bg-black/95 backdrop-blur-2xl border border-slate-200 dark:border-white/10 shadow-2xl md:hidden`}
           >
             <div className="p-4 space-y-2">

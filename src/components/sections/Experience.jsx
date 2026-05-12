@@ -57,8 +57,9 @@ const Experience = () => {
                 </FadeInSection>
 
                 {/* Glowing Timeline Node */}
-                <div className="hidden md:flex absolute left-1/2 transform -translate-x-1/2 w-14 h-14 rounded-[1.2rem] bg-slate-900 dark:bg-black border-2 border-primary-500 items-center justify-center z-20 shadow-[0_0_20px_rgba(99,102,241,0.6)] group-hover:rotate-45 transition-transform duration-500">
-                  <Icon size={24} className="text-primary-400" />
+                <div className="hidden md:flex absolute left-1/2 transform -translate-x-1/2 w-14 h-14 rounded-[1.2rem] bg-slate-900 dark:bg-black border-2 border-primary-500 items-center justify-center z-20 shadow-[0_0_20px_rgba(168,85,247,0.6)] group-hover:rotate-45 transition-transform duration-500 group-hover:shadow-[0_0_30px_rgba(168,85,247,0.8)]">
+                  <div className="absolute inset-0 bg-primary-500 blur-md opacity-20 group-hover:opacity-60 transition-opacity duration-500 rounded-[1.2rem]"></div>
+                  <Icon size={24} className="text-primary-400 relative z-10 group-hover:-rotate-45 transition-transform duration-500" />
                 </div>
               </div>
             );
