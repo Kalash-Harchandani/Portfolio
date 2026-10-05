@@ -5,7 +5,7 @@ import Typewriter from 'typewriter-effect';
 import { portfolioData } from '../../data/portfolioData';
 
 const Hero = () => {
-  const { name, tagline, resumeUrl } = portfolioData.hero;
+  const { name, role, tagline, resumeUrl } = portfolioData.hero;
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -81,7 +81,12 @@ const Hero = () => {
               <span className="text-xs font-bold tracking-widest uppercase">
                 <Typewriter
                   options={{
-                    strings: ['Building Ai integrated systems', 'Full stack Mern developer', 'LLMs and RAG PipeLines', 'Problem solving skills'],
+                    strings: [
+                      'AI Developer @ HERE Technologies',
+                      'Agentic AI & Deep Agents',
+                      'LangGraph & LangChain Workflows',
+                      'Amazon Bedrock & Cloud Architecture'
+                    ],
                     autoStart: true,
                     loop: true,
                     delay: 50,
@@ -103,7 +108,7 @@ const Hero = () => {
               
               <motion.div variants={itemVariants} className="flex items-center gap-4 text-2xl md:text-3xl font-light text-slate-600 dark:text-slate-300">
                 <span className="w-16 h-px bg-primary-500"></span>
-                <p>Full Stack Developer & AI Integrator</p>
+                <p>{role}</p>
               </motion.div>
             </div>
 

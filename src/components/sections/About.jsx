@@ -67,22 +67,22 @@ const About = () => {
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div className="flex items-start gap-4 p-5 rounded-2xl bg-white/50 dark:bg-white/5 border border-slate-100 dark:border-white/5">
-                    <div className="p-3 rounded-xl bg-green-500/10 text-green-600 dark:text-green-400 shrink-0">
+                    <div className="p-3 rounded-xl bg-blue-500/10 text-blue-600 dark:text-blue-400 shrink-0">
                       <ShieldCheck size={24} />
                     </div>
                     <div>
-                      <h4 className="font-bold text-slate-900 dark:text-white mb-1">Architecture</h4>
-                      <p className="text-sm text-slate-500 dark:text-slate-400">Scalable & HLD focused systems.</p>
+                      <h4 className="font-bold text-slate-900 dark:text-white mb-1">Cloud & Infrastructure</h4>
+                      <p className="text-sm text-slate-500 dark:text-slate-400">AWS EC2, S3, SQS & OpenSearch.</p>
                     </div>
                   </div>
                   
                   <div className="flex items-start gap-4 p-5 rounded-2xl bg-white/50 dark:bg-white/5 border border-slate-100 dark:border-white/5">
-                    <div className="p-3 rounded-xl bg-orange-500/10 text-orange-600 dark:text-orange-400 shrink-0">
+                    <div className="p-3 rounded-xl bg-primary-500/10 text-primary-600 dark:text-primary-400 shrink-0">
                       <Target size={24} />
                     </div>
                     <div>
-                      <h4 className="font-bold text-slate-900 dark:text-white mb-1">AI Injection</h4>
-                      <p className="text-sm text-slate-500 dark:text-slate-400">RAG, LLMs & Vector Search.</p>
+                      <h4 className="font-bold text-slate-900 dark:text-white mb-1">Agentic AI & LLMs</h4>
+                      <p className="text-sm text-slate-500 dark:text-slate-400">LangGraph, LangChain, MCP & Bedrock.</p>
                     </div>
                   </div>
                 </div>
@@ -91,18 +91,18 @@ const About = () => {
             
             <div className="flex items-center justify-between p-6 px-10 glass-card rounded-3xl border border-white dark:border-white/5 shadow-lg">
                <div className="text-center">
+                  <p className="text-xl md:text-2xl font-black text-slate-900 dark:text-white">HERE Tech</p>
+                  <p className="text-[10px] font-bold text-slate-400 uppercase tracking-widest">AI Intern</p>
+               </div>
+               <div className="w-px h-8 bg-slate-200 dark:bg-slate-800"></div>
+               <div className="text-center">
                   <p className="text-2xl font-black text-slate-900 dark:text-white">8.52</p>
                   <p className="text-[10px] font-bold text-slate-400 uppercase tracking-widest">CGPA</p>
                </div>
                <div className="w-px h-8 bg-slate-200 dark:bg-slate-800"></div>
                <div className="text-center">
-                  <p className="text-2xl font-black text-slate-900 dark:text-white">2+</p>
-                  <p className="text-[10px] font-bold text-slate-400 uppercase tracking-widest">AI Systems Shipped</p>
-               </div>
-               <div className="w-px h-8 bg-slate-200 dark:bg-slate-800"></div>
-               <div className="text-center">
-                  <p className="text-2xl font-black text-slate-900 dark:text-white">AI-1st</p>
-                  <p className="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Core Philosophy</p>
+                  <p className="text-xl md:text-2xl font-black text-slate-900 dark:text-white">Agentic AI</p>
+                  <p className="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Core Focus</p>
                </div>
             </div>
           </FadeInSection>

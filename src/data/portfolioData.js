@@ -1,14 +1,14 @@
-import { Code, Database, Layout, Server, Terminal, Wrench } from 'lucide-react';
+import { Bot, Database, Layout, Server, Terminal, Wrench } from 'lucide-react';
 
 export const portfolioData = {
   hero: {
     name: "Kalash Harchandani",
-    role: "Full Stack Developer & AI Integrator",
-    tagline: "Building intelligent, scalable, and AI-powered digital experiences.",
+    role: "AI Developer Intern @ HERE Technologies",
+    tagline: "Engineering intelligent Agentic AI workflows, Deep Agents, and scalable cloud architectures on AWS.",
     resumeUrl: "https://drive.google.com/uc?export=download&id=1eKjvlhyJzHHzFbvNxsUpJayUOySzDYon"
   },
   about: {
-    summary: "Computer Science & Engineering student at Bennett University with a CGPA of 8.52. Experienced in full-stack web development, AI integration (RAG, LLMs), and scalable architecture. Recognized for top performance and strong problem-solving skills, translating complex requirements into modern, efficient digital solutions.",
+    summary: "AI Developer Intern at HERE Technologies—a Netherlands-based multinational leader specialized in mapping technologies, location data, and automotive services. Passionate about building autonomous Agentic AI systems, multi-agent orchestration (LangGraph, LangChain, Deep Agents), MCP (Model Context Protocol), Amazon Bedrock, and resilient AWS cloud architectures (EC2, S3, SQS, OpenSearch). Computer Science & Engineering student at Bennett University focused on high-performance, enterprise-grade digital intelligence.",
     image: "/about_me.jpg"
   },
   contact: {
@@ -22,27 +22,27 @@ export const portfolioData = {
     {
       category: "Languages",
       icon: Terminal,
-      items: ["C++", "JavaScript"]
+      items: ["Python", "JavaScript", "C++"]
+    },
+    {
+      category: "Agentic AI & LLMs",
+      icon: Bot,
+      items: ["Agentic AI", "LangGraph", "LangChain", "Deep Agents", "MCP", "Amazon Bedrock", "RAG Systems", "Vector Search"]
+    },
+    {
+      category: "Cloud & DevOps",
+      icon: Server,
+      items: ["AWS (EC2, S3, SQS)", "Docker", "Vercel"]
+    },
+    {
+      category: "Databases & Search",
+      icon: Database,
+      items: ["OpenSearch", "Pinecone", "MongoDB", "MySQL"]
     },
     {
       category: "Web Development",
       icon: Layout,
       items: ["React", "Node.js", "Express.js", "REST APIs"]
-    },
-    {
-      category: "Databases",
-      icon: Database,
-      items: ["MongoDB", "MySQL", "Pinecone"]
-    },
-    {
-      category: "AI & LLM",
-      icon: Code,
-      items: ["Gemini API", "ChatGPT API", "RAG-based Systems", "Vector Search"]
-    },
-    {
-      category: "DevOps & Cloud",
-      icon: Server,
-      items: ["Docker", "AWS EC2", "Vercel"]
     },
     {
       category: "Tools & Core CS",
@@ -77,6 +77,19 @@ export const portfolioData = {
     }
   ],
   experience: [
+    {
+      title: "AI Developer Intern",
+      company: "HERE Technologies",
+      location: "Netherlands / India",
+      date: "Present",
+      type: "work",
+      bullets: [
+        "Contributing to HERE Technologies, a Dutch multinational mapping and location data platform powering automotive services and global enterprises.",
+        "Architecting Agentic AI solutions and multi-agent workflows utilizing LangChain, LangGraph, and Deep Agents.",
+        "Integrating Model Context Protocol (MCP) and Amazon Bedrock for scalable, enterprise-grade AI orchestration.",
+        "Designing cloud-native infrastructure on AWS leveraging EC2, S3, SQS, and OpenSearch for high-performance retrieval and data processing."
+      ]
+    },
     {
       title: "SDE Intern",
       company: "TechKareer",
