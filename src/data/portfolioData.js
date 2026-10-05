@@ -3,12 +3,12 @@ import { Bot, Database, Layout, Server, Terminal, Wrench } from 'lucide-react';
 export const portfolioData = {
   hero: {
     name: "Kalash Harchandani",
-    role: "AI Developer Intern @ HERE Technologies",
-    tagline: "Engineering intelligent Agentic AI workflows, Deep Agents, and scalable cloud architectures on AWS.",
+    role: "AI Developer @ HERE Technologies • Freelance Engineer",
+    tagline: "Building enterprise Agentic AI systems and production platforms for high-growth startups.",
     resumeUrl: "https://drive.google.com/uc?export=download&id=1eKjvlhyJzHHzFbvNxsUpJayUOySzDYon"
   },
   about: {
-    summary: "AI Developer Intern at HERE Technologies—a Netherlands-based multinational leader specialized in mapping technologies, location data, and automotive services. Passionate about building autonomous Agentic AI systems, multi-agent orchestration (LangGraph, LangChain, Deep Agents), MCP (Model Context Protocol), Amazon Bedrock, and resilient AWS cloud architectures (EC2, S3, SQS, OpenSearch). Computer Science & Engineering student at Bennett University focused on high-performance, enterprise-grade digital intelligence.",
+    summary: "AI Developer Intern at HERE Technologies and Freelance Systems Engineer. Specializing in autonomous multi-agent pipelines (LangGraph, MCP, Bedrock) and full-stack startup platforms with custom Admin Backends & real-time IMS.",
     image: "/about_me.jpg"
   },
   contact: {
@@ -20,11 +20,6 @@ export const portfolioData = {
   },
   skills: [
     {
-      category: "Languages",
-      icon: Terminal,
-      items: ["Python", "JavaScript", "C++"]
-    },
-    {
       category: "Agentic AI & LLMs",
       icon: Bot,
       items: ["Agentic AI", "LangGraph", "LangChain", "Deep Agents", "MCP", "Amazon Bedrock", "RAG Systems", "Vector Search"]
@@ -35,45 +30,78 @@ export const portfolioData = {
       items: ["AWS (EC2, S3, SQS)", "Docker", "Vercel"]
     },
     {
+      category: "Languages",
+      icon: Terminal,
+      items: ["Python", "JavaScript", "C++"]
+    },
+    {
       category: "Databases & Search",
       icon: Database,
       items: ["OpenSearch", "Pinecone", "MongoDB", "MySQL"]
     },
     {
-      category: "Web Development",
+      category: "Full-Stack & Web",
       icon: Layout,
-      items: ["React", "Node.js", "Express.js", "REST APIs"]
+      items: ["React", "Node.js", "Express.js", "REST APIs", "Admin IMS"]
     },
     {
-      category: "Tools & Core CS",
+      category: "Architecture & Tools",
       icon: Wrench,
-      items: ["Git", "GitHub", "VS Code", "Cursor", "OOP", "HLD"]
+      items: ["Git", "GitHub", "VS Code", "Cursor", "HLD", "OOP"]
     }
   ],
   projects: [
     {
+      title: "Chal Na Yaar",
+      subtitle: "Startup Retail & E-Commerce Platform",
+      client: "Chal Na Yaar",
+      category: "startup",
+      badge: "Production Client",
+      description: "Production retail platform with dynamic Store Timings engine & custom Inventory Management System (IMS) backend.",
+      highlights: ["Store Timings Engine", "Admin IMS", "Real-Time Stock"],
+      techStack: ["React", "Node.js", "Express.js", "MongoDB", "Tailwind CSS"],
+      live: "https://chalnayaar.com/",
+      github: "",
+      image: "/chalnayaar.png"
+    },
+    {
+      title: "The Better Desserts",
+      subtitle: "Artisan Dessert Brand Storefront",
+      client: "The Better Desserts",
+      category: "startup",
+      badge: "Production Client",
+      description: "Luxury commerce storefront with interactive menu showcases and a high-conversion mobile ordering flow.",
+      highlights: ["Visual Storefront", "High Conversion", "Framer Motion"],
+      techStack: ["React", "Tailwind CSS", "Framer Motion", "Vercel"],
+      live: "https://the-better-desserts.vercel.app/",
+      github: "",
+      image: "/betterdesserts.png"
+    },
+    {
       title: "RepoInsight AI",
-      description: "RAG-based Code Intelligence System mapping high-dimensional vectors to enable semantic code search and context-aware explanations using Gemini API.",
-      techStack: ["React", "Node", "Express", "Pinecone", "Gemini", "AWS"],
-      github: "https://github.com/Kalash-Harchandani/repoinsight-ai",
+      subtitle: "Codebase Intelligence & Vector Search",
+      client: "AI Product",
+      category: "ai",
+      badge: "Flagship AI",
+      description: "RAG system using high-dimensional vector embeddings and Gemini LLM for sub-second semantic code search.",
+      highlights: ["Pinecone Vector DB", "Gemini API", "Semantic Search"],
+      techStack: ["React", "Node.js", "Pinecone", "Gemini API", "AWS"],
       live: "https://repoinsight-ai.vercel.app/",
+      github: "https://github.com/Kalash-Harchandani/repoinsight-ai",
       image: "/repoinsight.png"
     },
     {
       title: "Armour",
-      description: "AI-Powered Domain Intelligence Platform providing security assessments via an automated OSINT data collection engine and Gemini-driven analysis.",
-      techStack: ["MERN", "Gemini", "Docker", "AWS EC2", "Vercel"],
-      github: "https://github.com/Kalash-Harchandani/Armour",
+      subtitle: "Domain Security & OSINT Intelligence",
+      client: "Security AI",
+      category: "ai",
+      badge: "AI & Security",
+      description: "Automated OSINT reconnaissance pipeline and Gemini-driven risk scoring engine deployed on AWS EC2.",
+      highlights: ["OSINT Recon", "Gemini Threat Analysis", "AWS EC2 Docker"],
+      techStack: ["MERN", "Gemini API", "Docker", "AWS EC2"],
       live: "https://wearearmour.in/",
+      github: "https://github.com/Kalash-Harchandani/Armour",
       image: "/armour.png"
-    },
-    {
-      title: "Cal.com Clone",
-      description: "Full-stack scheduling platform with conflict-free math-based slot generation, customized availability, and relational backend.",
-      techStack: ["React", "Node", "MySQL", "Docker", "AWS"],
-      github: "https://github.com/Kalash-Harchandani/calcom-scheduling-platform",
-      live: "https://calcom-scheduling-platform.vercel.app/",
-      image: "/calcom.png"
     }
   ],
   experience: [
@@ -84,10 +112,19 @@ export const portfolioData = {
       date: "Present",
       type: "work",
       bullets: [
-        "Contributing to HERE Technologies, a Dutch multinational mapping and location data platform powering automotive services and global enterprises.",
-        "Architecting Agentic AI solutions and multi-agent workflows utilizing LangChain, LangGraph, and Deep Agents.",
-        "Integrating Model Context Protocol (MCP) and Amazon Bedrock for scalable, enterprise-grade AI orchestration.",
-        "Designing cloud-native infrastructure on AWS leveraging EC2, S3, SQS, and OpenSearch for high-performance retrieval and data processing."
+        "Architecting Agentic AI solutions and multi-agent workflows using LangChain, LangGraph, and Deep Agents.",
+        "Integrating Model Context Protocol (MCP) and Amazon Bedrock across AWS cloud pipelines (EC2, S3, SQS, OpenSearch)."
+      ]
+    },
+    {
+      title: "Freelance Software & AI Engineer",
+      company: "Self-Employed (Startups)",
+      location: "Remote",
+      date: "2023 - Present",
+      type: "work",
+      bullets: [
+        "Shipped production web platforms with custom Admin Backends, Store Timings, and real-time IMS for startups.",
+        "End-to-end delivery from architecture to deployment for Chal Na Yaar and The Better Desserts."
       ]
     },
     {
@@ -97,10 +134,8 @@ export const portfolioData = {
       date: "Recent",
       type: "work",
       bullets: [
-        "Selected in the top 5% of applicants through a presentation-based evaluation process.",
-        "Engaged with clients to understand requirements and support candidate sourcing from an existing network.",
-        "Integrated Gemini and ChatGPT APIs to support AI-driven features.",
-        "Gained exposure to React components while supporting frontend feature development."
+        "Selected in top 5% of applicants; integrated Gemini & ChatGPT APIs for AI features.",
+        "Built and maintained responsive React frontend components."
       ]
     },
     {
@@ -110,8 +145,7 @@ export const portfolioData = {
       date: "Current",
       type: "education",
       bullets: [
-        "CGPA: 8.52",
-        "Focused on core concepts including OOP, High-Level Design, and algorithms."
+        "CGPA: 8.52 • Focus: High-Level System Design, OOP, Data Structures & Algorithms."
       ]
     }
   ],
@@ -119,7 +153,6 @@ export const portfolioData = {
     "Building Applications with Vector Databases: Pinecone (DeepLearning.AI)",
     "Prompt Engineering for Developers: OpenAI (DeepLearning.AI)",
     "Data Structures & Algorithms Cohort: CodeHelp by Love Babbar",
-    "API Learning Path: Postman",
-    "Introduction to Modern Database Systems: Saylor.org"
+    "API Learning Path: Postman"
   ]
 };

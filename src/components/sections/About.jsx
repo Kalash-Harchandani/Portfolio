@@ -1,110 +1,93 @@
 import React from 'react';
-import { User, Target, Zap, ShieldCheck } from 'lucide-react';
-import { portfolioData } from '../../data/portfolioData';
+import { Bot, Store, Database, GraduationCap } from 'lucide-react';
 import { FadeInSection } from '../FadeInSection';
 
 const About = () => {
   return (
-    <section id="about" className="py-24 relative overflow-hidden bg-slate-50 dark:bg-black">
-      <div className="absolute inset-0 bg-grid-slate-200/[0.05] dark:bg-grid-white/[0.02] z-0"></div>
+    <section id="about" className="py-20 relative overflow-hidden bg-slate-50 dark:bg-[#070709]">
+      <div className="absolute inset-0 bg-grid-slate-100 dark:bg-grid-slate-900 bg-[size:40px_40px] pointer-events-none z-0"></div>
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <FadeInSection>
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-5xl font-black text-slate-900 dark:text-white mb-6 uppercase tracking-tighter">
-              The Mission
+          <div className="text-center max-w-2xl mx-auto mb-12">
+            <span className="font-mono text-xs font-bold tracking-widest uppercase text-primary-600 dark:text-primary-400">
+              01 // PROFILE
+            </span>
+            <h2 className="text-3xl md:text-5xl font-black text-slate-900 dark:text-white mt-1 uppercase tracking-tight">
+              About Me
             </h2>
-            <div className="w-24 h-1.5 bg-gradient-to-r from-primary-600 to-indigo-500 mx-auto rounded-full"></div>
+            <div className="w-16 h-1 bg-gradient-to-r from-primary-600 to-indigo-500 mx-auto rounded-full mt-2"></div>
           </div>
         </FadeInSection>
 
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center max-w-5xl mx-auto">
           
-          {/* Photo Column - Takes 5/12 columns */}
-          <FadeInSection delay={0.2} direction="right" className="lg:col-span-5">
-            <div className="relative group">
-              {/* Decorative Background Elements */}
-              <div className="absolute -inset-4 bg-gradient-to-tr from-primary-600 to-purple-600 rounded-3xl opacity-20 blur-2xl group-hover:opacity-30 transition duration-1000"></div>
-              
-              <div className="relative rounded-3xl overflow-hidden shadow-2xl border-2 border-white/50 dark:border-white/10 aspect-[3/4]">
+          {/* Visual Photo Card (5 cols) */}
+          <FadeInSection delay={0.15} direction="right" className="lg:col-span-5">
+            <div className="relative group max-w-[340px] mx-auto">
+              <div className="relative rounded-3xl overflow-hidden shadow-xl border border-slate-200 dark:border-white/10 aspect-[3/4] bg-slate-900">
                 <img 
                   src="/about_me.jpg" 
                   alt="Kalash Harchandani" 
                   loading="lazy"
-                  className="w-full h-full object-cover object-top transform group-hover:scale-105 transition-transform duration-700 ease-in-out grayscale-[0.2] hover:grayscale-0"
+                  className="w-full h-full object-cover object-top filter contrast-[1.02] group-hover:scale-105 transition-transform duration-500 ease-out"
                 />
-                
-                {/* Overlay Badge */}
-                <div className="absolute bottom-6 left-6 right-6 p-4 glass-card rounded-2xl border-white/20 dark:border-white/5 backdrop-blur-xl translate-y-2 group-hover:translate-y-0 transition-transform duration-500">
-                  <div className="flex items-center gap-3">
-                    <div className="p-2 rounded-lg bg-primary-600 text-white">
-                      <Zap size={20} />
-                    </div>
-                    <div>
-                      <p className="text-xs font-bold text-slate-500 dark:text-slate-400 uppercase tracking-widest">Experience</p>
-                      <p className="text-sm font-bold text-slate-900 dark:text-white">Shipping Real Systems</p>
-                    </div>
-                  </div>
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent"></div>
+                <div className="absolute bottom-4 left-4 right-4 text-white">
+                  <p className="text-sm font-black">Kalash Harchandani</p>
+                  <p className="text-xs text-slate-300 font-mono">AI Developer & Systems Builder</p>
                 </div>
               </div>
             </div>
           </FadeInSection>
           
-          {/* Content Column - Takes 7/12 columns */}
-          <FadeInSection delay={0.4} direction="left" className="lg:col-span-7 flex flex-col space-y-8">
-            <div className="glass-card p-10 md:p-14 rounded-[2.5rem] relative overflow-hidden group border border-white dark:border-white/5 shadow-xl">
-              <div className="absolute -top-10 -right-10 w-40 h-40 bg-primary-500/10 rounded-full blur-3xl group-hover:bg-primary-500/20 transition-colors duration-700"></div>
-              
-              <div className="relative z-10">
-                <div className="flex items-center gap-3 mb-8 text-primary-600 dark:text-primary-400">
-                  <User size={28} className="font-bold" />
-                  <span className="text-sm font-black uppercase tracking-[0.3em]">Developer Profile</span>
-                </div>
-                
-                <p className="text-xl md:text-2xl text-slate-700 dark:text-slate-300 leading-relaxed font-light mb-12 italic">
-                   "{portfolioData.about.summary}"
-                </p>
+          {/* Concise Info & 4 Metric Blocks (7 cols) */}
+          <FadeInSection delay={0.25} direction="left" className="lg:col-span-7 flex flex-col space-y-6">
+            
+            {/* 1-2 Punchy Sentences */}
+            <p className="text-base sm:text-lg text-slate-700 dark:text-slate-300 leading-relaxed font-normal">
+              AI Developer Intern at <strong className="text-slate-900 dark:text-white font-bold">HERE Technologies</strong> and freelance systems engineer. I architect autonomous multi-agent pipelines with LangGraph & AWS Bedrock, and build production web apps with custom <strong className="text-slate-900 dark:text-white font-bold">Admin IMS & Store Timing backends</strong> for active startups.
+            </p>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <div className="flex items-start gap-4 p-5 rounded-2xl bg-white/50 dark:bg-white/5 border border-slate-100 dark:border-white/5">
-                    <div className="p-3 rounded-xl bg-blue-500/10 text-blue-600 dark:text-blue-400 shrink-0">
-                      <ShieldCheck size={24} />
-                    </div>
-                    <div>
-                      <h4 className="font-bold text-slate-900 dark:text-white mb-1">Cloud & Infrastructure</h4>
-                      <p className="text-sm text-slate-500 dark:text-slate-400">AWS EC2, S3, SQS & OpenSearch.</p>
-                    </div>
-                  </div>
-                  
-                  <div className="flex items-start gap-4 p-5 rounded-2xl bg-white/50 dark:bg-white/5 border border-slate-100 dark:border-white/5">
-                    <div className="p-3 rounded-xl bg-primary-500/10 text-primary-600 dark:text-primary-400 shrink-0">
-                      <Target size={24} />
-                    </div>
-                    <div>
-                      <h4 className="font-bold text-slate-900 dark:text-white mb-1">Agentic AI & LLMs</h4>
-                      <p className="text-sm text-slate-500 dark:text-slate-400">LangGraph, LangChain, MCP & Bedrock.</p>
-                    </div>
-                  </div>
+            {/* 4 Compact Visual Metric Cards */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
+              <div className="p-4 rounded-2xl bg-white/70 dark:bg-white/[0.03] border border-slate-200/80 dark:border-white/[0.08] backdrop-blur-sm">
+                <div className="flex items-center gap-2 text-primary-600 dark:text-primary-400 mb-1">
+                  <Bot size={16} />
+                  <span className="font-mono text-[10px] font-bold uppercase tracking-wider">Enterprise AI</span>
                 </div>
+                <p className="text-sm font-bold text-slate-900 dark:text-white">HERE Technologies</p>
+                <p className="text-xs text-slate-500 dark:text-slate-400 mt-0.5">LangGraph, MCP & Bedrock</p>
+              </div>
+
+              <div className="p-4 rounded-2xl bg-white/70 dark:bg-white/[0.03] border border-slate-200/80 dark:border-white/[0.08] backdrop-blur-sm">
+                <div className="flex items-center gap-2 text-emerald-600 dark:text-emerald-400 mb-1">
+                  <Store size={16} />
+                  <span className="font-mono text-[10px] font-bold uppercase tracking-wider">Commercial Startups</span>
+                </div>
+                <p className="text-sm font-bold text-slate-900 dark:text-white">2+ Live Platforms</p>
+                <p className="text-xs text-slate-500 dark:text-slate-400 mt-0.5">Chal Na Yaar & Better Desserts</p>
+              </div>
+
+              <div className="p-4 rounded-2xl bg-white/70 dark:bg-white/[0.03] border border-slate-200/80 dark:border-white/[0.08] backdrop-blur-sm">
+                <div className="flex items-center gap-2 text-indigo-600 dark:text-indigo-400 mb-1">
+                  <Database size={16} />
+                  <span className="font-mono text-[10px] font-bold uppercase tracking-wider">Custom Backends</span>
+                </div>
+                <p className="text-sm font-bold text-slate-900 dark:text-white">Store Timings & IMS</p>
+                <p className="text-xs text-slate-500 dark:text-slate-400 mt-0.5">Real-time inventory management</p>
+              </div>
+
+              <div className="p-4 rounded-2xl bg-white/70 dark:bg-white/[0.03] border border-slate-200/80 dark:border-white/[0.08] backdrop-blur-sm">
+                <div className="flex items-center gap-2 text-purple-600 dark:text-purple-400 mb-1">
+                  <GraduationCap size={16} />
+                  <span className="font-mono text-[10px] font-bold uppercase tracking-wider">Academics</span>
+                </div>
+                <p className="text-sm font-bold text-slate-900 dark:text-white">8.52 CGPA</p>
+                <p className="text-xs text-slate-500 dark:text-slate-400 mt-0.5">B.Tech CSE, Bennett University</p>
               </div>
             </div>
-            
-            <div className="flex items-center justify-between p-6 px-10 glass-card rounded-3xl border border-white dark:border-white/5 shadow-lg">
-               <div className="text-center">
-                  <p className="text-xl md:text-2xl font-black text-slate-900 dark:text-white">HERE Tech</p>
-                  <p className="text-[10px] font-bold text-slate-400 uppercase tracking-widest">AI Intern</p>
-               </div>
-               <div className="w-px h-8 bg-slate-200 dark:bg-slate-800"></div>
-               <div className="text-center">
-                  <p className="text-2xl font-black text-slate-900 dark:text-white">8.52</p>
-                  <p className="text-[10px] font-bold text-slate-400 uppercase tracking-widest">CGPA</p>
-               </div>
-               <div className="w-px h-8 bg-slate-200 dark:bg-slate-800"></div>
-               <div className="text-center">
-                  <p className="text-xl md:text-2xl font-black text-slate-900 dark:text-white">Agentic AI</p>
-                  <p className="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Core Focus</p>
-               </div>
-            </div>
+
           </FadeInSection>
         </div>
       </div>

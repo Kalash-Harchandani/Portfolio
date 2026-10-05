@@ -4,25 +4,126 @@
 
 @layer base {
   body {
-    @apply antialiased text-slate-900 bg-slate-50 dark:text-slate-50 dark:bg-black transition-colors duration-500 overflow-x-hidden;
+    @apply antialiased text-slate-900 bg-slate-50 dark:text-slate-100 dark:bg-[#070709] transition-colors duration-500 overflow-x-hidden font-sans selection:bg-primary-500/20 selection:text-primary-400;
   }
   
   html {
     scroll-behavior: smooth;
   }
+
+  /* Custom subtle scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    @apply bg-slate-300 dark:bg-neutral-800 rounded-full hover:bg-slate-400 dark:hover:bg-neutral-700 transition-colors;
+  }
 }
 
 @layer components {
   .glass-card {
-    @apply bg-white/80 dark:bg-black/60 backdrop-blur-xl border border-white/40 dark:border-white/10 shadow-lg hover:shadow-xl transition-all duration-300;
+    @apply bg-white/80 dark:bg-[#0d0d12]/75 backdrop-blur-xl border border-slate-200/80 dark:border-white/[0.08] shadow-[0_8px_30px_rgb(0,0,0,0.04)] dark:shadow-[0_8px_30px_rgb(0,0,0,0.4)] transition-all duration-300;
+  }
+
+  .tech-border-glow {
+    @apply relative after:absolute after:inset-0 after:rounded-[inherit] after:border after:border-primary-500/0 hover:after:border-primary-500/40 after:transition-all after:duration-500;
+  }
+
+  .mono-tag {
+    @apply font-mono text-[11px] tracking-wider uppercase;
   }
 }
 
 /* Custom Grid Background Patterns */
 .bg-grid-slate-100 {
-  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32' width='32' height='32' fill='none' stroke='rgb(241 245 249 / 0.1)'%3e%3cpath d='M0 .5H31.5V32'/%3e%3c/svg%3e");
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32' width='32' height='32' fill='none' stroke='rgb(15 23 42 / 0.04)'%3e%3cpath d='M0 .5H31.5V32'/%3e%3c/svg%3e");
 }
 
 .dark .bg-grid-slate-900 {
-  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32' width='32' height='32' fill='none' stroke='rgb(23 23 23 / 0.4)'%3e%3cpath d='M0 .5H31.5V32'/%3e%3c/svg%3e");
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32' width='32' height='32' fill='none' stroke='rgb(255 255 255 / 0.03)'%3e%3cpath d='M0 .5H31.5V32'/%3e%3c/svg%3e");
 }
+
+.bg-dot-matrix {
+  background-image: radial-gradient(rgba(99, 102, 241, 0.15) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+/* Apple iPhone 'Hello' handwriting writing animation */
+@keyframes appleWriteStroke {
+  0% {
+    stroke-dashoffset: 1400;
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  75% {
+    stroke-dashoffset: 0;
+    fill: transparent;
+  }
+  100% {
+    stroke-dashoffset: 0;
+    fill: #ffffff;
+  }
+}
+
+@keyframes appleUnderlineDraw {
+  0% {
+    stroke-dashoffset: 600;
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    stroke-dashoffset: 0;
+    opacity: 1;
+  }
+}
+
+@keyframes appleGlowPulse {
+  0%, 100% {
+    filter: drop-shadow(0 0 12px rgba(255, 85, 0, 0.45)) drop-shadow(0 0 35px rgba(255, 85, 0, 0.2));
+  }
+  50% {
+    filter: drop-shadow(0 0 24px rgba(255, 85, 0, 0.8)) drop-shadow(0 0 60px rgba(255, 85, 0, 0.35));
+  }
+}
+
+@keyframes appleHomeBarPulse {
+  0%, 100% {
+    transform: translateY(0);
+    opacity: 0.6;
+  }
+  50% {
+    transform: translateY(-6px);
+    opacity: 1;
+  }
+}
+
+.apple-hello-svg-text {
+  font-family: 'Caveat', 'Dancing Script', cursive, sans-serif;
+  stroke: #ff5500;
+  stroke-width: 2.2px;
+  stroke-dasharray: 1400;
+  stroke-dashoffset: 1400;
+  animation: appleWriteStroke 2.2s cubic-bezier(0.35, 0, 0.25, 1) forwards;
+}
+
+.apple-hello-underline {
+  stroke-dasharray: 600;
+  stroke-dashoffset: 600;
+  animation: appleUnderlineDraw 1.2s 1.6s cubic-bezier(0.2, 0, 0.2, 1) forwards;
+}
+
+.apple-hello-glow {
+  animation: appleGlowPulse 2.8s ease-in-out infinite;
+}
+
+.apple-home-bar-bounce {
+  animation: appleHomeBarPulse 2s ease-in-out infinite;
+}
+
