@@ -82,7 +82,7 @@ export const editorialData = {
       company: "HERE Technologies",
       role: "AI Developer Intern",
       description: "Architecting enterprise Agentic AI solutions and multi-agent workflows using LangChain, LangGraph, and Deep Agents. Integrating Model Context Protocol (MCP) and Amazon Bedrock across AWS cloud pipelines (EC2, S3, SQS, OpenSearch).",
-      startDate: "Jan 2026",
+      startDate: "June 2026",
       endDate: "Present",
       companyUrl: "https://www.here.com/",
     },
